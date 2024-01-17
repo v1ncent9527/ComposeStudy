@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.vincent.composedemo.page.landing.LandingPage
+import com.vincent.composedemo.page.modifier.ModifierPage
 import com.vincent.composedemo.page.navigator.NavigatorPage
 
 @Composable
@@ -32,6 +33,10 @@ fun NavigatorStack() {
                 val gender = arguments.getString("gender")
                 NavigatorPage(name, age, gender,navController = navController)
             }
+        }
+
+        composable(route = Router.MODIFIER_PAGE){
+            ModifierPage(navController = navController)
         }
     }
 }
